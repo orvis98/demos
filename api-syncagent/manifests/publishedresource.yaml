@@ -1,0 +1,13 @@
+---
+apiVersion: syncagent.kcp.io/v1alpha1
+kind: PublishedResource
+metadata:
+  name: webapps.example.com-v1alpha1
+spec:
+  naming:
+    name: "$remoteNamespace-$remoteName"
+    namespace: "$remoteClusterName"
+  resource:
+    apiGroup: example.com
+    kind: WebApp
+    version: v1alpha1

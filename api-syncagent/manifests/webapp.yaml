@@ -1,0 +1,12 @@
+---
+apiVersion: org1.example.com/v1alpha1
+kind: WebApp
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  image: stefanprodan/podinfo
+  containerPort: 9898
+  basicAuth:
+    users: |
+      foo:{SHA}Ys23Ag/5IOWqZCw9QGaVDdHwH00=
