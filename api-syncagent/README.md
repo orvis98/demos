@@ -88,7 +88,7 @@ kcpctl apply -f manifests/apibinding.yaml
 KUBECONFIG=.kcp/admin.kubeconfig kubectl ws :root:org1
 cp .kcp/admin.kubeconfig .kcp/org1.kubeconfig
 kind export kubeconfig --kubeconfig kind.kubeconfig
-# start a local api-syncagent instance that can talk to both kcp and k8s
+# in a seperate shell, start a local api-syncagent instance that can talk to both kcp and k8s
 api-syncagent --apiexport-ref org1.example.com --kcp-kubeconfig .kcp/org1.kubeconfig --kubeconfig kind.kubeconfig --namespace default
 ```
 
