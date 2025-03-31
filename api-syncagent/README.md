@@ -66,7 +66,7 @@ kubectl apply -f manifests/publishedresource.yaml
 ### Prepare the kcp instance
 
 ```bash
-# in a seperate shell start a local kcp instance
+# in a separate shell start a local kcp instance
 kcp start
 # create workspaces
 alias kcpctl="KUBECONFIG=.kcp/admin.kubeconfig kubectl"
@@ -88,7 +88,7 @@ kcpctl apply -f manifests/apibinding.yaml
 KUBECONFIG=.kcp/admin.kubeconfig kubectl ws :root:org1
 cp .kcp/admin.kubeconfig .kcp/org1.kubeconfig
 kind export kubeconfig --kubeconfig kind.kubeconfig
-# in a seperate shell, start a local api-syncagent instance that can talk to both kcp and k8s
+# in a separate shell, start a local api-syncagent instance that can talk to both kcp and k8s
 api-syncagent --apiexport-ref org1.example.com --kcp-kubeconfig .kcp/org1.kubeconfig --kubeconfig kind.kubeconfig --namespace default
 ```
 
@@ -97,7 +97,7 @@ api-syncagent --apiexport-ref org1.example.com --kcp-kubeconfig .kcp/org1.kubeco
 We need an IP address accessible from the host for the Gateway.
 
 ```bash
-# in a seperate shell run cloud-provider-kind to give the Gateway an address
+# in a separate shell run cloud-provider-kind to give the Gateway an address
 sudo cloud-provider-kind
 export GATEWAY_IP="$(kubectl get gateway webapps -o json | jq '.status.addresses[0].value' --raw-output)"
 ```
